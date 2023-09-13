@@ -1,6 +1,7 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/NavBar";
+import RecipesGrid from "./components/RecipesGrid";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main" bg="purple">
-        mian
+        <RecipesGrid />
       </GridItem>
     </Grid>
   );
