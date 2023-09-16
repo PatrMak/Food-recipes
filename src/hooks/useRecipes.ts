@@ -2,9 +2,14 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 
-interface Recipe {
+export interface Recipe {
   label: string;
   calories: number;
+  images: {
+    SMALL: {
+      url: string;
+    };
+  };
 }
 
 interface Recipes {
@@ -32,7 +37,6 @@ const useRecipes = () => {
 
     return () => controller.abort();
   }, []);
-
   return { recipes, error };
 };
 
