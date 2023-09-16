@@ -10,6 +10,9 @@ export interface Recipe {
       url: string;
     };
   };
+  source: string;
+  url: string;
+  ingredientLines: string[];
 }
 
 interface Recipes {

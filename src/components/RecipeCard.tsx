@@ -26,6 +26,7 @@ const RecipeCard = ({ recipe }: Props) => {
   const caloriesAndIngredientsTxtColor: string = "#666";
   const caloriesAndIngredientsFont: string = "lg";
   const caloriesAndIngredientsTxtFont: string = "md";
+  const caloriesRounded: number = Math.round(recipe.calories);
 
   return (
     <Card
@@ -37,7 +38,7 @@ const RecipeCard = ({ recipe }: Props) => {
     >
       <Image margin="5px" boxSize="200px" src={recipe.images.SMALL.url}></Image>
       <CardBody w="100%" textAlign="center" alignContent="center">
-        <Heading padding="5px" fontSize="14px">
+        <Heading padding="5px" fontSize="xl">
           {recipe.label}
         </Heading>
         <Divider margin="0" borderColor={dividerColor}></Divider>
@@ -50,7 +51,7 @@ const RecipeCard = ({ recipe }: Props) => {
               margin="0"
               fontSize={caloriesAndIngredientsFont}
             >
-              120
+              {caloriesRounded}
             </Text>
             <Text
               textShadow={textShadow}
@@ -76,7 +77,7 @@ const RecipeCard = ({ recipe }: Props) => {
               margin="0"
               fontSize={caloriesAndIngredientsFont}
             >
-              1220
+              {recipe.ingredientLines.length}
             </Text>
             <Text
               textShadow={textShadow}
@@ -97,8 +98,9 @@ const RecipeCard = ({ recipe }: Props) => {
           fontSize={caloriesAndIngredientsFont}
           color="#999"
           textShadow={textShadow}
+          href={recipe.url}
         >
-          test
+          {recipe.source}
         </Link>
       </CardFooter>
     </Card>
