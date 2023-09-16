@@ -55,7 +55,9 @@ const SearchInputs = ({ onSearch }: Props) => {
                 bgGradient: "linear-gradient(to-b, #8fe21b 100%, #6cb30a 100%)",
               }}
               children={<FaSearch size={20} color="white"></FaSearch>}
-              onClick={()=>{ if(ref.current) onSearch(ref.current.value)}}
+              onClick={() => {
+                if (ref.current) onSearch(ref.current.value);
+              }}
             ></Button>
           </Box>
         </InputRightElement>
