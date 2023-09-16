@@ -33,7 +33,9 @@ const RecipeCard = ({ recipe }: Props) => {
       bgGradient="linear-gradient(to bottom, #ffffff 60%,#f7f7f7 100%)"
       size="sm"
       align="center"
-      borderRadius={5}
+      borderRadius="10px"
+      width="280px"
+      height="380px"
       border="1px solid #E6E6E6"
     >
       <Image margin="5px" boxSize="200px" src={recipe.images.SMALL.url}></Image>
