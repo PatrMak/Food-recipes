@@ -10,10 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
-interface Props {
-  selectedFilter: Filters | null;
-}
-
 const FilterList = () => {
   const { data, isLoading, error } = useFilters();
 

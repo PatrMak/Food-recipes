@@ -7,7 +7,7 @@ interface Props {
 
 const RecipeCardContainer = ({ children }: Props) => {
   return (
-    <Box borderRadius="10px" width="280px">
+    <Box borderRadius="10px" width="280px" height="380px">
       {children}
     </Box>
   );

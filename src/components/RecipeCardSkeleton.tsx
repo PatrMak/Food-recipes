@@ -4,7 +4,7 @@ import { Skeleton, SkeletonText } from "@chakra-ui/skeleton";
 const RecipeCardSkeleton = () => {
   return (
     <Card>
-      <Skeleton height="380px" />
+      <Skeleton />
       <CardBody>
         <SkeletonText />
       </CardBody>
