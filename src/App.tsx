@@ -3,13 +3,14 @@ import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/NavBar";
 import RecipesGrid from "./components/RecipesGrid";
 import FilterList from "./components/FilterList";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Grid
       templateAreas={{
         base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
+        lg: `"nav nav" "aside main" "footer footer"`,
       }}
       templateColumns={{
         base: "1fr",
@@ -31,9 +32,19 @@ function App() {
           <FilterList />
         </GridItem>
       </Show>
-      <GridItem area="main">
+      <GridItem area="main" paddingX={2} marginRight={1}>
         <RecipesGrid />
       </GridItem>
+      <Show above="lg">
+        <GridItem
+          area="footer"
+          bg="#E6E6E6"
+          borderTop="1px solid #FFF"
+          sx={{ position: "sticky", bottom: "0" }}
+        >
+          <Footer />
+        </GridItem>
+      </Show>
     </Grid>
   );
 }
