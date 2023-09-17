@@ -34,7 +34,6 @@ const RecipeCard = ({ recipe }: Props) => {
       size="sm"
       align="center"
       borderRadius="10px"
-      width="280px"
       height="380px"
       border="1px solid #E6E6E6"
     >
