@@ -41,6 +41,7 @@ const SearchInputs = ({ onSearch }: Props) => {
           border="1px solid #BFBFBF"
           boxShadow={boxShadowColor}
           borderRadius="30px"
+          bg="white"
           _focusVisible={{ boxShadow: boxShadowColor }}
           _hover={{ boxShadow: boxShadowColor }}
         ></Input>
