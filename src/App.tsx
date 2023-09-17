@@ -2,6 +2,7 @@ import { Grid, GridItem, Show } from "@chakra-ui/react";
 import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/NavBar";
 import RecipesGrid from "./components/RecipesGrid";
+import FilterList from "./components/FilterList";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
 
       <Show above="lg">
         <GridItem area="aside" bg="orange">
-          aside
+          <FilterList />
         </GridItem>
       </Show>
       <GridItem area="main">
