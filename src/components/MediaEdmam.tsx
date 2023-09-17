@@ -12,7 +12,7 @@ const MediaEdmam = () => {
         paddingLeft="50px"
         fontSize="12px"
       >
-        FOLLOW US:
+        FOLLOW EDAMAM:
       </Text>
       {data.map((icon) => (
         <Link key={icon.id} href={icon.link} isExternal>
