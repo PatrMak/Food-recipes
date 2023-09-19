@@ -6,5 +6,11 @@ export interface Filters {
   item: string[];
 }
 
+export interface SelectedFilters {
+  filter: string;
+  label: string;
+  item: string;
+}
+
 const useFilters = () => ({ data: filters, isLoading: false, error: null });
 export default useFilters;

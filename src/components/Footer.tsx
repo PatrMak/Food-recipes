@@ -12,12 +12,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// <IconButton
-// aria-label="pinterest"
-// variant="outline"
-// _hover={{ bg: "transparent" }}
-// icon={
-//   <Icon boxSize={7} _hover={{ color: "red.600" }} as={BsPinterest} />
-// }
-// />

@@ -4,8 +4,22 @@ import NavBar from "./components/NavBar";
 import RecipesGrid from "./components/RecipesGrid";
 import FilterList from "./components/FilterList";
 import Footer from "./components/Footer";
+import { useState } from "react";
+
+export interface RecipeQuery {
+  q: string | null;
+  diet: string | null;
+  health: string | null;
+  cuisineType: string | null;
+  mealType: string | null;
+  dishType: string | null;
+}
 
 function App() {
+  const [selectedFilter, setSelectedFilter] = useState<RecipeQuery>(
+    {} as RecipeQuery
+  );
+
   return (
     <Grid
       templateAreas={{
@@ -29,11 +43,23 @@ function App() {
           borderTop="1px solid #FFF"
           bgGradient="linear(to-r, #f7f7f7 15%, #e3e3e3 50%)"
         >
-          <FilterList />
+          <FilterList
+            onSelectedFilters={(filter, item) =>
+              setSelectedFilter({
+                ...selectedFilter,
+                diet: filter === "Diet" ? item : selectedFilter.diet,
+                health: filter === "Health" ? item : selectedFilter.health,
+                cuisineType:
+                  filter === "Cuisine" ? item : selectedFilter.cuisineType,
+                mealType: filter === "Meal" ? item : selectedFilter.mealType,
+                dishType: filter === "Dish" ? item : selectedFilter.dishType,
+              })
+            }
+          />
         </GridItem>
       </Show>
       <GridItem area="main" paddingX={2} marginRight={1}>
-        <RecipesGrid />
+        <RecipesGrid selectedFilters={selectedFilter} />
       </GridItem>
       <Show above="lg">
         <GridItem

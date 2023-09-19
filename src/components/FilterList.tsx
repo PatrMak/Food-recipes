@@ -1,4 +1,4 @@
-import useFilters, { Filters } from "../hooks/useFilters";
+import useFilters from "../hooks/useFilters";
 import { Button } from "@chakra-ui/button";
 import { VStack } from "@chakra-ui/layout";
 import {
@@ -10,7 +10,11 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
-const FilterList = () => {
+interface Props {
+  onSelectedFilters: (filter: string, item: string) => void;
+}
+
+const FilterList = ({ onSelectedFilters }: Props) => {
   const { data, isLoading, error } = useFilters();
 
   return (
@@ -33,7 +37,7 @@ const FilterList = () => {
                 <MenuItemOption
                   key={n}
                   value={n}
-                  onClick={() => console.log(n)}
+                  onClick={() => onSelectedFilters(filter.filter, n)}
                 >
                   {n}
                 </MenuItemOption>
