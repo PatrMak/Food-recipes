@@ -18,20 +18,25 @@ interface Recipes {
   recipe: Recipe;
 }
 
-const useRecipes = (selectedFilters: RecipeQuery | null) =>
+const useRecipes = (selectedFilters: RecipeQuery | undefined) =>
   useData<Recipes>(
     "/v2",
     {
       params: {
-        q: selectedFilters?.q,
+        q:
+          selectedFilters?.q === undefined &&
+          selectedFilters?.diet === undefined &&
+          selectedFilters?.health === undefined &&
+          selectedFilters?.cuisineType === undefined &&
+          selectedFilters?.mealType === undefined &&
+          selectedFilters?.dishType === undefined
+            ? "meal"
+            : selectedFilters.q,
         diet: selectedFilters?.diet,
         health: selectedFilters?.health,
         cuisineType: selectedFilters?.cuisineType,
-        mealType:
-          selectedFilters?.mealType !== undefined ||
-          selectedFilters?.q !== undefined
-            ? selectedFilters?.mealType
-            : "Dinner",
+        mealType: selectedFilters?.mealType,
+
         dishType: selectedFilters?.dishType,
       },
     },
@@ -39,3 +44,8 @@ const useRecipes = (selectedFilters: RecipeQuery | null) =>
   );
 
 export default useRecipes;
+
+// selectedFilters?.mealType !== undefined ||
+// selectedFilters?.q !== undefined
+//   ? selectedFilters?.mealType
+//   : "Dinner",

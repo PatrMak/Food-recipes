@@ -6,7 +6,7 @@ import RecipeCardContainer from "./RecipeCardContainer";
 import { RecipeQuery } from "../App";
 
 interface Props {
-  selectedFilters: RecipeQuery | null;
+  selectedFilters: RecipeQuery | undefined;
 }
 
 const RecipesGrid = ({ selectedFilters }: Props) => {
