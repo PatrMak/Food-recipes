@@ -23,12 +23,14 @@ const useRecipes = (selectedFilters: RecipeQuery | null) =>
     "/v2",
     {
       params: {
+        q: selectedFilters?.q,
         diet: selectedFilters?.diet,
         health: selectedFilters?.health,
         cuisineType: selectedFilters?.cuisineType,
         mealType:
-          selectedFilters?.mealType != null
-            ? selectedFilters.mealType
+          selectedFilters?.mealType !== undefined ||
+          selectedFilters?.q !== undefined
+            ? selectedFilters?.mealType
             : "Dinner",
         dishType: selectedFilters?.dishType,
       },

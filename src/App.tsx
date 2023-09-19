@@ -7,12 +7,12 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 
 export interface RecipeQuery {
-  q: string | null;
-  diet: string | null;
-  health: string | null;
-  cuisineType: string | null;
-  mealType: string | null;
-  dishType: string | null;
+  q: string;
+  diet: string;
+  health: string;
+  cuisineType: string;
+  mealType: string;
+  dishType: string;
 }
 
 function App() {
@@ -33,7 +33,14 @@ function App() {
       templateRows={"50px 1fr 50px"}
     >
       <GridItem area="nav" bgGradient="linear(to-b, #f7f7f7 0%, #e3e3e3 100%)">
-        <NavBar onSearch={(searchTxt) => console.log(searchTxt)} />
+        <NavBar
+          onSearch={(searchTxt) =>
+            setSelectedFilter({
+              ...selectedFilter,
+              q: searchTxt !== "" ? searchTxt : selectedFilter.q,
+            })
+          }
+        />
       </GridItem>
       <Show above="lg">
         <GridItem
