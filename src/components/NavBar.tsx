@@ -1,6 +1,6 @@
 import { HStack } from "@chakra-ui/react";
 import SearchInputs from "./SearchInputs";
-import Menu from "./Menu";
+import About from "./About";
 import Logo from "./Logo";
 
 interface Props {
@@ -12,7 +12,7 @@ const NavBar = ({ onSearch }: Props) => {
     <HStack paddingTop="4px" paddingBottom="4px" justifyContent="space-between">
       <Logo></Logo>
       <SearchInputs onSearch={onSearch}></SearchInputs>
-      <Menu></Menu>
+      <About></About>
     </HStack>
   );
 };
