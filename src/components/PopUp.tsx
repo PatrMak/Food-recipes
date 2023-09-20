@@ -20,13 +20,30 @@ const PopUp = ({ isOpen, onClose, header, body }: Props) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>{header}</ModalHeader>
+      <ModalContent borderRadius="10px">
+        <ModalHeader
+          bg="#6cb30a"
+          padding="5px"
+          textAlign="center"
+          color="white"
+          borderTopRadius="10px"
+        >
+          {header}
+        </ModalHeader>
 
         <ModalBody>{body}</ModalBody>
 
         <ModalFooter justifyContent="center">
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <Button
+            bgGradient="linear-gradient(to-b, #8fe21b 0%, #6cb30a 100%)"
+            border="1px solid #999"
+            mr={3}
+            onClick={onClose}
+            _hover={{
+              bgGradient: "linear-gradient(to-b, #8fe21b 100%, #6cb30a 100%)",
+            }}
+            color="white"
+          >
             Close
           </Button>
         </ModalFooter>

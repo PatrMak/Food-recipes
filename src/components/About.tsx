@@ -49,7 +49,7 @@ const About = () => {
       <PopUp
         isOpen={isOpen}
         onClose={onClose}
-        header={<Text>About Project</Text>}
+        header={<Text margin="0">About Project</Text>}
         body={
           <>
             <Text>
@@ -67,7 +67,7 @@ const About = () => {
       <PopUp
         isOpen={isOpenSecond}
         onClose={onCloseSecond}
-        header={<Text>About Me</Text>}
+        header={<Text margin="0">About Me</Text>}
         body={
           <>
             <Text>
