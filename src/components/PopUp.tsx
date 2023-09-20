@@ -18,7 +18,7 @@ interface Props {
 
 const PopUp = ({ isOpen, onClose, header, body }: Props) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{header}</ModalHeader>
