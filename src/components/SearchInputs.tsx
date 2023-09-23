@@ -15,16 +15,13 @@ interface Props {
 }
 
 const SearchInputs = ({ onSearch }: Props) => {
-  const [isLargerThan992]: boolean[] = useMediaQuery("(min-width: 992px)");
-  // const placeholderTxt: string = isLargerThan992
-  //   ? "Find the best recipes from web..."
-  //   : "Find the best recipes...";
   const boxShadowColor: string = "1px 1px 2px #CCC inset";
-  const placeHolderTxt: string = useBreakpointValue({
-    base: "Find recipes...",
-    md: "Find the best recipes...",
-    lg: " Find the best recipes from web...",
-  });
+  const placeHolderTxt: string =
+    useBreakpointValue({
+      base: "Find recipes...",
+      md: "Find the best recipes...",
+      lg: " Find the best recipes from web...",
+    }) ?? "Find recipes...";
 
   const ref = useRef<HTMLInputElement>(null);
 
@@ -38,7 +35,7 @@ const SearchInputs = ({ onSearch }: Props) => {
       <InputGroup
         w={{
           base: "200px",
-          sm: "200px",
+          sm: "300px",
           lg: "720px",
         }}
       >

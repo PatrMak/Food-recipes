@@ -13,7 +13,7 @@ import FilterList from "./components/FilterList";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import AsideSm from "./components/AsideSm";
-
+import navStyles from "./components/NavBar.module.css";
 export interface RecipeQuery {
   q: string;
   diet: string;
@@ -29,6 +29,7 @@ function App() {
   );
   const [isActiveFilters, setActiveFilters] = useState(false);
   const [isLargerThan992]: boolean[] = useMediaQuery("(min-width: 992px)");
+  const [isLargerThan768]: boolean[] = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
     isLargerThan992
@@ -40,21 +41,26 @@ function App() {
     <Grid
       templateAreas={{
         base: isActiveFilters
+          ? `"nav nav" "aside aside-sm"`
+          : `"nav nav" "aside-sm main"`,
+        md: isActiveFilters
           ? `"nav nav nav" "aside aside-sm main"`
           : `"nav nav" "aside-sm main"`,
         lg: `"nav nav" "aside main" "footer footer"`,
       }}
       templateColumns={{
-        base: isActiveFilters ? "200px 20px 1fr" : "20px 1fr",
+        base: isActiveFilters ? "1fr 20px" : "20px 1fr",
+        md: isActiveFilters ? "200px 20px 1fr" : "20px 1fr",
         lg: "200px 1fr",
       }}
       templateRows={{ base: "50px 1fr", lg: "50px 1fr 50px" }}
     >
       <GridItem
+        className={navStyles.mobileNav}
         area="nav"
         bgGradient="linear(to-b, #f7f7f7 0%, #e3e3e3 100%)"
-        position="fixed"
-        zIndex="200"
+        //    position="static"
+        //   zIndex="200"
       >
         <NavBar
           onSearch={(searchTxt) =>
@@ -102,12 +108,19 @@ function App() {
           <AsideSm onShowFilters={(isActive) => setActiveFilters(isActive)} />
         </GridItem>
       </Show>
-      <GridItem area="main" paddingX={2} justifyContent="center" display="flex">
-        <RecipesGrid
-          isActiveFilters={isActiveFilters}
-          selectedFilters={selectedFilter}
-        />
-      </GridItem>
+      {(!isActiveFilters || isLargerThan992 || isLargerThan768) && (
+        <GridItem
+          area="main"
+          paddingX={2}
+          justifyContent="center"
+          display="flex"
+        >
+          <RecipesGrid
+            isActiveFilters={isActiveFilters}
+            selectedFilters={selectedFilter}
+          />
+        </GridItem>
+      )}
       <Show above="lg">
         <GridItem
           area="footer"

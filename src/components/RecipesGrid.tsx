@@ -21,12 +21,13 @@ const RecipesGrid = ({ selectedFilters, isActiveFilters }: Props) => {
           base: 1,
           sm: isActiveFilters ? 1 : 2,
           md: isActiveFilters ? 1 : 2,
-          lg: 3,
+          lg: 2,
           xl: 4,
           "2xl": 5,
         }}
-        spacing={10}
-        //  padding="10px"
+        spacingX={5}
+        spacingY={10}
+        padding="10px 0"
         justifyContent="center"
       >
         {isLoading &&
