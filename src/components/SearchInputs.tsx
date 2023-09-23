@@ -5,7 +5,6 @@ import {
   InputGroup,
   InputRightElement,
   useBreakpointValue,
-  useMediaQuery,
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";

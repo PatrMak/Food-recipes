@@ -59,8 +59,6 @@ function App() {
         className={navStyles.mobileNav}
         area="nav"
         bgGradient="linear(to-b, #f7f7f7 0%, #e3e3e3 100%)"
-        //    position="static"
-        //   zIndex="200"
       >
         <NavBar
           onSearch={(searchTxt) =>
@@ -108,7 +106,7 @@ function App() {
           <AsideSm onShowFilters={(isActive) => setActiveFilters(isActive)} />
         </GridItem>
       </Show>
-      {(!isActiveFilters || isLargerThan992 || isLargerThan768) && (
+      {(!isActiveFilters || isLargerThan768) && (
         <GridItem
           area="main"
           paddingX={2}

@@ -1,6 +1,6 @@
 import { Box, Icon, IconButton } from "@chakra-ui/react";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface Props {
   onShowFilters: (isActive: boolean) => void;
@@ -29,5 +29,3 @@ const AsideSm = ({ onShowFilters }: Props) => {
 };
 
 export default AsideSm;
-
-//() => (isActive ? setActive(false) : setActive(true))
