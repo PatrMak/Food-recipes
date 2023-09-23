@@ -4,6 +4,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  useBreakpointValue,
   useMediaQuery,
 } from "@chakra-ui/react";
 import { useRef } from "react";
@@ -15,10 +16,15 @@ interface Props {
 
 const SearchInputs = ({ onSearch }: Props) => {
   const [isLargerThan992]: boolean[] = useMediaQuery("(min-width: 992px)");
-  const placeholderTxt: string = isLargerThan992
-    ? "Find the best recipes from web..."
-    : "Find the best recipes...";
+  // const placeholderTxt: string = isLargerThan992
+  //   ? "Find the best recipes from web..."
+  //   : "Find the best recipes...";
   const boxShadowColor: string = "1px 1px 2px #CCC inset";
+  const placeHolderTxt: string = useBreakpointValue({
+    base: "Find recipes...",
+    md: "Find the best recipes...",
+    lg: " Find the best recipes from web...",
+  });
 
   const ref = useRef<HTMLInputElement>(null);
 
@@ -31,13 +37,14 @@ const SearchInputs = ({ onSearch }: Props) => {
     >
       <InputGroup
         w={{
-          base: "300px",
+          base: "200px",
+          sm: "200px",
           lg: "720px",
         }}
       >
         <Input
           ref={ref}
-          placeholder={placeholderTxt}
+          placeholder={placeHolderTxt}
           border="1px solid #BFBFBF"
           boxShadow={boxShadowColor}
           borderRadius="30px"

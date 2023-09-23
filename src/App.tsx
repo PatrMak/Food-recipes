@@ -48,9 +48,14 @@ function App() {
         base: isActiveFilters ? "200px 20px 1fr" : "20px 1fr",
         lg: "200px 1fr",
       }}
-      templateRows={"50px 1fr 50px"}
+      templateRows={{ base: "50px 1fr", lg: "50px 1fr 50px" }}
     >
-      <GridItem area="nav" bgGradient="linear(to-b, #f7f7f7 0%, #e3e3e3 100%)">
+      <GridItem
+        area="nav"
+        bgGradient="linear(to-b, #f7f7f7 0%, #e3e3e3 100%)"
+        position="fixed"
+        zIndex="200"
+      >
         <NavBar
           onSearch={(searchTxt) =>
             setSelectedFilter({
@@ -60,29 +65,29 @@ function App() {
           }
         />
       </GridItem>
-
-      <GridItem
-        area="aside"
-        paddingX={2}
-        borderRight="1px solid #e3e3e3 "
-        borderTop="1px solid #FFF"
-        bgGradient="linear(to-r, #f7f7f7 15%, #e3e3e3 50%)"
-      >
-        <FilterList
-          onSelectedFilters={(filter, item) =>
-            setSelectedFilter({
-              ...selectedFilter,
-              diet: filter === "Diet" ? item : selectedFilter.diet,
-              health: filter === "Health" ? item : selectedFilter.health,
-              cuisineType:
-                filter === "Cuisine" ? item : selectedFilter.cuisineType,
-              mealType: filter === "Meal" ? item : selectedFilter.mealType,
-              dishType: filter === "Dish" ? item : selectedFilter.dishType,
-            })
-          }
-        />
-      </GridItem>
-
+      {(isActiveFilters || isLargerThan992) && (
+        <GridItem
+          area="aside"
+          paddingX={2}
+          borderRight="1px solid #e3e3e3 "
+          borderTop="1px solid #FFF"
+          bgGradient="linear(to-r, #f7f7f7 15%, #e3e3e3 50%)"
+        >
+          <FilterList
+            onSelectedFilters={(filter, item) =>
+              setSelectedFilter({
+                ...selectedFilter,
+                diet: filter === "Diet" ? item : selectedFilter.diet,
+                health: filter === "Health" ? item : selectedFilter.health,
+                cuisineType:
+                  filter === "Cuisine" ? item : selectedFilter.cuisineType,
+                mealType: filter === "Meal" ? item : selectedFilter.mealType,
+                dishType: filter === "Dish" ? item : selectedFilter.dishType,
+              })
+            }
+          />
+        </GridItem>
+      )}
       <Show below="lg">
         <GridItem
           h="100vh"
@@ -97,8 +102,11 @@ function App() {
           <AsideSm onShowFilters={(isActive) => setActiveFilters(isActive)} />
         </GridItem>
       </Show>
-      <GridItem area="main" paddingX={2} marginRight={1}>
-        <RecipesGrid selectedFilters={selectedFilter} />
+      <GridItem area="main" paddingX={2} justifyContent="center" display="flex">
+        <RecipesGrid
+          isActiveFilters={isActiveFilters}
+          selectedFilters={selectedFilter}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem
