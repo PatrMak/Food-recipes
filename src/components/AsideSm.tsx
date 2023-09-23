@@ -11,6 +11,7 @@ const AsideSm = ({ onShowFilters }: Props) => {
 
   return (
     <IconButton
+      w="20px"
       h="100vh"
       aria-label="show filters"
       justifyContent="left"
