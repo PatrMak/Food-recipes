@@ -5,6 +5,7 @@ import RecipesGrid from "./components/RecipesGrid";
 import FilterList from "./components/FilterList";
 import Footer from "./components/Footer";
 import { useState } from "react";
+import AsideSm from "./components/AsideSm";
 
 export interface RecipeQuery {
   q: string;
@@ -23,11 +24,11 @@ function App() {
   return (
     <Grid
       templateAreas={{
-        base: `"nav" "main"`,
+        base: `"nav nav" "aside-sm main"`,
         lg: `"nav nav" "aside main" "footer footer"`,
       }}
       templateColumns={{
-        base: "1fr",
+        base: "20px 1fr",
         lg: "200px 1fr",
       }}
       templateRows={"50px 1fr 50px"}
@@ -63,6 +64,20 @@ function App() {
               })
             }
           />
+        </GridItem>
+      </Show>
+      <Show below="lg">
+        <GridItem
+          h="100vh"
+          area="aside-sm"
+          bgGradient="linear(to-r, #f7f7f7 0%, #e3e3e3 100%)"
+          alignContent="center"
+          display="flex"
+          flexWrap="wrap"
+          sx={{ position: "sticky", top: "0" }}
+          overflow="hidden"
+        >
+          <AsideSm onShowFilters={(isActive) => console.log(isActive)} />
         </GridItem>
       </Show>
       <GridItem area="main" paddingX={2} marginRight={1}>
