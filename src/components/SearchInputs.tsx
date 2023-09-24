@@ -63,7 +63,10 @@ const SearchInputs = ({ onSearch }: Props) => {
               }}
               children={<FaSearch size={20} color="white"></FaSearch>}
               onClick={() => {
-                if (ref.current) onSearch(ref.current.value);
+                if (ref.current)
+                  if (typeof onSearch !== "undefined") {
+                    onSearch(ref.current.value);
+                  }
               }}
             ></Button>
           </Box>

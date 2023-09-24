@@ -14,7 +14,6 @@ import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import AsideSm from "../components/AsideSm";
 import navStyles from "../components/NavBar.module.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export interface RecipeQuery {
   q: string;
@@ -57,11 +56,7 @@ function Home() {
       }}
       templateRows={{ base: "50px 1fr", lg: "50px 1fr 50px" }}
     >
-      <GridItem
-        className={navStyles.mobileNav}
-        area="nav"
-        bgGradient="linear(to-b, #f7f7f7 0%, #e3e3e3 100%)"
-      >
+      <GridItem className={navStyles.mobileNav} area="nav">
         <NavBar
           onSearch={(searchTxt) =>
             setSelectedFilter({
@@ -78,6 +73,7 @@ function Home() {
           borderRight="1px solid #e3e3e3 "
           borderTop="1px solid #FFF"
           bgGradient="linear(to-r, #f7f7f7 15%, #e3e3e3 50%)"
+          height="100%"
         >
           <FilterList
             onSelectedFilters={(filter, item) =>
@@ -103,7 +99,6 @@ function Home() {
           display="flex"
           flexWrap="wrap"
           sx={{ position: "sticky", top: "0" }}
-          overflow="hidden"
         >
           <AsideSm onShowFilters={(isActive) => setActiveFilters(isActive)} />
         </GridItem>
@@ -122,12 +117,7 @@ function Home() {
         </GridItem>
       )}
       <Show above="lg">
-        <GridItem
-          area="footer"
-          bg="#E6E6E6"
-          borderTop="1px solid #FFF"
-          sx={{ position: "sticky", bottom: "0" }}
-        >
+        <GridItem area="footer" sx={{ position: "sticky", bottom: "0" }}>
           <Footer />
         </GridItem>
       </Show>

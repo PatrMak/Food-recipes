@@ -10,7 +10,12 @@ interface Props {
 
 const NavBar = ({ onSearch, isSearch = true }: Props) => {
   return (
-    <HStack paddingTop="4px" paddingBottom="4px" justifyContent="space-between">
+    <HStack
+      paddingTop="4px"
+      paddingBottom="4px"
+      justifyContent="space-between"
+      bgGradient="linear(to-b, #f7f7f7 0%, #e3e3e3 100%)"
+    >
       <Logo></Logo>
       {isSearch && <SearchInputs onSearch={onSearch}></SearchInputs>}
       <About></About>
