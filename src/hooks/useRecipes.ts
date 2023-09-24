@@ -1,5 +1,5 @@
 import useData from "./useData";
-import { RecipeQuery } from "../App";
+import { RecipeQuery } from "../Pages/Home";
 
 export interface Recipe {
   label: string;
@@ -15,6 +15,7 @@ export interface Recipe {
   source: string;
   url: string;
   ingredientLines: string[];
+  healthLabels: string[];
 }
 
 interface Recipes {
