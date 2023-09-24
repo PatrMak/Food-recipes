@@ -10,7 +10,7 @@ import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 
 interface Props {
-  onSearch: (searchTxt: string) => void;
+  onSearch?: (searchTxt: string) => void;
 }
 
 const SearchInputs = ({ onSearch }: Props) => {
@@ -28,7 +28,10 @@ const SearchInputs = ({ onSearch }: Props) => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (ref.current) onSearch(ref.current.value);
+        if (ref.current)
+          if (typeof onSearch !== "undefined") {
+            onSearch(ref.current.value);
+          }
       }}
     >
       <InputGroup

@@ -6,6 +6,6 @@ export default axios.create({
     type: "public",
     app_id: "ceedd357",
     app_key: "da9ab23e5c43c8c9d5c0f4b70b1d755c",
-    mealType: "Dinner",
+    // mealType: "Dinner",
   },
 });
