@@ -11,29 +11,29 @@ import DetailsNutrition from "./DetailsNutrition";
 export interface NutritionDetails {
   totalNutritients: TotalNutritients;
   totalDaily: TotalDaily;
-  test: TestNutrition[];
+  nutritions: TestNutrition[];
 }
 
 const Nutrition = ({
   totalNutritients,
   totalDaily,
-  test,
+  nutritions,
 }: NutritionDetails) => {
   return (
-    <VStack>
+    <VStack paddingTop={5}>
       <Text
         margin="0"
         fontSize="2xl"
         color="#666"
         textShadow='1px 1px 0px #FFF"'
       >
-        Nutritiion
+        Nutrition
       </Text>
       <DetailsCalories
         calories={totalNutritients.ENERC_KCAL.quantity}
         dailyPercentage={totalDaily.ENERC_KCAL.quantity}
       />
-      <DetailsNutrition testNut={test} />
+      <DetailsNutrition nutritions={nutritions} />
     </VStack>
   );
 };
