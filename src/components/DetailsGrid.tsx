@@ -25,8 +25,9 @@ const DetailsGrid = ({ recipe }: Props) => {
       </GridItem>
       <GridItem area="nutrition" borderLeft="1px solid #F3F3F3">
         <Nutrition
-          totalNutritients={recipe.totalNutrients}
+          test={recipe.digest}
           totalDaily={recipe.totalDaily}
+          totalNutritients={recipe.totalNutrients}
         />
       </GridItem>
       <GridItem

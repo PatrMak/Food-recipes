@@ -21,9 +21,50 @@ export interface TotalNutritients {
 
 export interface TotalDaily {
   ENERC_KCAL: {
+    label: string;
     quantity: number;
     unit: string;
   };
+  FAT: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  CHOCDF: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  MG: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  K: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  FE: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+}
+
+export interface TestNutrition {
+  label: string;
+  total: number;
+  daily: number;
+  unit: string;
+  sub: [
+    {
+      label: string;
+      total: number;
+      daily: number;
+      unit: string;
+    }
+  ];
 }
 
 export interface Recipe {
@@ -43,6 +84,7 @@ export interface Recipe {
   healthLabels: string[];
   totalNutrients: TotalNutritients;
   totalDaily: TotalDaily;
+  digest: TestNutrition[];
 }
 
 interface Recipes {

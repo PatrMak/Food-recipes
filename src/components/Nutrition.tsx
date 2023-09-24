@@ -1,15 +1,24 @@
 import { Divider, VStack, Text, HStack } from "@chakra-ui/react";
 import React from "react";
-import { TotalDaily, TotalNutritients } from "../hooks/useRecipes";
+import {
+  TestNutrition,
+  TotalDaily,
+  TotalNutritients,
+} from "../hooks/useRecipes";
 import DetailsCalories from "./DetailsCalories";
 import DetailsNutrition from "./DetailsNutrition";
 
 export interface NutritionDetails {
   totalNutritients: TotalNutritients;
   totalDaily: TotalDaily;
+  test: TestNutrition[];
 }
 
-const Nutrition = ({ totalNutritients, totalDaily }: NutritionDetails) => {
+const Nutrition = ({
+  totalNutritients,
+  totalDaily,
+  test,
+}: NutritionDetails) => {
   return (
     <VStack>
       <Text
@@ -24,10 +33,7 @@ const Nutrition = ({ totalNutritients, totalDaily }: NutritionDetails) => {
         calories={totalNutritients.ENERC_KCAL.quantity}
         dailyPercentage={totalDaily.ENERC_KCAL.quantity}
       />
-      <DetailsNutrition
-        totalNutritients={totalNutritients}
-        totalDaily={totalDaily}
-      />
+      <DetailsNutrition testNut={test} />
     </VStack>
   );
 };
