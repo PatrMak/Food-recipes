@@ -1,6 +1,28 @@
 import useData from "./useData";
 import { RecipeQuery } from "../Pages/Home";
 
+export interface TotalNutritients {
+  ENERC_KCAL: {
+    quantity: number;
+    unit: string;
+  };
+  FAT: {
+    quantity: number;
+    unit: string;
+  };
+  CHOCDF: {
+    quantity: number;
+    unit: string;
+  };
+}
+
+export interface TotalDaily {
+  ENERC_KCAL: {
+    quantity: number;
+    unit: string;
+  };
+}
+
 export interface Recipe {
   label: string;
   calories: number;
@@ -16,6 +38,8 @@ export interface Recipe {
   url: string;
   ingredientLines: string[];
   healthLabels: string[];
+  totalNutrients: TotalNutritients;
+  totalDaily: TotalDaily;
 }
 
 interface Recipes {

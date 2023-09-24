@@ -1,0 +1,6 @@
+.mobileFooter {
+  position: -webkit-sticky;
+  position: sticky;
+
+  bottom: 0;
+}
