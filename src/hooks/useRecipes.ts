@@ -3,14 +3,17 @@ import { RecipeQuery } from "../Pages/Home";
 
 export interface TotalNutritients {
   ENERC_KCAL: {
+    label: string;
     quantity: number;
     unit: string;
   };
   FAT: {
+    label: string;
     quantity: number;
     unit: string;
   };
   CHOCDF: {
+    label: string;
     quantity: number;
     unit: string;
   };
