@@ -8,6 +8,9 @@ export interface Recipe {
     SMALL: {
       url: string;
     };
+    REGULAR: {
+      url: string;
+    };
   };
   source: string;
   url: string;
