@@ -22,7 +22,13 @@ const Page = () => {
       <GridItem area="nav" className={navStyles.mobileNav}>
         <NavBar isSearch={false} />
       </GridItem>
-      <GridItem area="main" display="flex" justifyContent="center" padding={10}>
+      <GridItem
+        area="main"
+        display="flex"
+        justifyContent="center"
+        paddingX={{ lg: 20, xl: 100 }}
+        paddingY={10}
+      >
         <DetailsGrid recipe={location.state.recipe} />
       </GridItem>
       <Show above="lg">

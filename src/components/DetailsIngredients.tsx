@@ -17,12 +17,7 @@ interface Props {
 
 const DetailsIngredients = ({ recipe }: Props) => {
   return (
-    <HStack
-      alignItems="flex-start"
-      justifyContent="center"
-      gap={5}
-      paddingX={2}
-    >
+    <HStack alignItems="flex-start" gap={5} paddingX={2}>
       <VStack gap={0}>
         <Text
           margin="0"

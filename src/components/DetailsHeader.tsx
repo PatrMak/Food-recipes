@@ -11,7 +11,9 @@ const DetailsHeader = ({ recipe }: Props) => {
     <HStack alignItems="flex-start">
       <Image src={recipe.images.REGULAR.url} />
       <VStack justifyContent="center">
-        <Heading textAlign="center">{recipe.label}</Heading>
+        <Heading padding={10} textAlign="center">
+          {recipe.label}
+        </Heading>
         <Link paddingTop={10} href={recipe.url} isExternal>
           <Button
             border="1px solid #999"

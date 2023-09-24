@@ -12,7 +12,7 @@ interface Props {
 
 const DetailsNutrition = ({ nutritions }: Props) => {
   return (
-    <HStack w="100%">
+    <HStack>
       <NutritionName nutritions={nutritions} />
       <>
         <NutritionTotal nutritions={nutritions} />
