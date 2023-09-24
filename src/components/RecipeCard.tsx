@@ -12,9 +12,10 @@ import {
   Center,
   CardFooter,
   Link,
+  LinkOverlay,
 } from "@chakra-ui/react";
-import { wrap } from "lodash";
-
+import { useNavigate } from "react-router-dom";
+import { Link as ReactRouterLink } from "react-router-dom";
 interface Props {
   recipe: Recipe;
 }
@@ -27,6 +28,10 @@ const RecipeCard = ({ recipe }: Props) => {
   const caloriesAndIngredientsFont: string = "lg";
   const caloriesAndIngredientsTxtFont: string = "md";
   const caloriesRounded: number = Math.round(recipe.calories);
+  const navigate = useNavigate();
+  const handlePage = () => {
+    navigate("/details", { state: { recipe: recipe } });
+  };
 
   return (
     <Card
@@ -37,64 +42,69 @@ const RecipeCard = ({ recipe }: Props) => {
       height="400px"
       border="1px solid #E6E6E6"
     >
-      <Image margin="5px" boxSize="200px" src={recipe.images.SMALL.url}></Image>
+      <Link onClick={handlePage}>
+        <Image margin="5px" boxSize="200px" src={recipe.images.SMALL.url} />
+      </Link>
       <CardBody w="100%" textAlign="center" alignContent="center">
-        <Heading padding="5px" fontSize="xl">
-          {recipe.label}
-        </Heading>
-        <Box position="absolute" bottom="50px">
-          <Divider margin="0" borderColor={dividerColor}></Divider>
-          <HStack padding="5px" justifyContent="center" alignSelf="end">
-            <>
-              <Text
-                textShadow={textShadow}
-                color={caloriesAndIngredientsColor}
-                paddingBottom="1px"
-                margin="0"
-                fontSize={caloriesAndIngredientsFont}
-              >
-                {caloriesRounded}
-              </Text>
-              <Text
-                textShadow={textShadow}
-                color={caloriesAndIngredientsTxtColor}
-                paddingBottom="1px"
-                margin="0"
-                fontSize={caloriesAndIngredientsTxtFont}
-              >
-                Calories
-              </Text>
-            </>
-            <Divider
-              margin="2.5px"
-              height="25px"
-              orientation="vertical"
-              borderColor={dividerColor}
-            />
-            <>
-              <Text
-                textShadow={textShadow}
-                color={caloriesAndIngredientsColor}
-                paddingBottom="1px"
-                margin="0"
-                fontSize={caloriesAndIngredientsFont}
-              >
-                {recipe.ingredientLines.length}
-              </Text>
-              <Text
-                textShadow={textShadow}
-                color={caloriesAndIngredientsTxtColor}
-                paddingBottom="1px"
-                margin="0"
-                fontSize={caloriesAndIngredientsTxtFont}
-              >
-                Ingredients
-              </Text>
-            </>
-          </HStack>
-          <Divider margin="0" borderColor={dividerColor}></Divider>
-        </Box>
+        <Link onClick={handlePage}>
+          <Heading padding="5px" fontSize="xl">
+            {recipe.label}
+          </Heading>
+          <Box position="absolute" bottom="50px">
+            <Divider margin="0" borderColor={dividerColor}></Divider>
+            <HStack padding="5px" justifyContent="center" alignSelf="end">
+              <>
+                <Text
+                  textShadow={textShadow}
+                  color={caloriesAndIngredientsColor}
+                  paddingBottom="1px"
+                  margin="0"
+                  fontSize={caloriesAndIngredientsFont}
+                >
+                  {caloriesRounded}
+                </Text>
+                <Text
+                  textShadow={textShadow}
+                  color={caloriesAndIngredientsTxtColor}
+                  paddingBottom="1px"
+                  margin="0"
+                  fontSize={caloriesAndIngredientsTxtFont}
+                >
+                  Calories
+                </Text>
+              </>
+              <Divider
+                margin="2.5px"
+                height="25px"
+                orientation="vertical"
+                borderColor={dividerColor}
+              />
+              <>
+                <Text
+                  textShadow={textShadow}
+                  color={caloriesAndIngredientsColor}
+                  paddingBottom="1px"
+                  margin="0"
+                  fontSize={caloriesAndIngredientsFont}
+                >
+                  {recipe.ingredientLines.length}
+                </Text>
+                <Text
+                  textShadow={textShadow}
+                  color={caloriesAndIngredientsTxtColor}
+                  paddingBottom="1px"
+                  margin="0"
+                  fontSize={caloriesAndIngredientsTxtFont}
+                >
+                  Ingredients
+                </Text>
+              </>
+            </HStack>
+            <Divider margin="0" borderColor={dividerColor}></Divider>
+          </Box>
+        </Link>
       </CardBody>
+
       <CardFooter padding="2px" marginBottom="5px">
         <Link
           fontWeight="bold"

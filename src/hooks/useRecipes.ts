@@ -1,5 +1,71 @@
 import useData from "./useData";
-import { RecipeQuery } from "../App";
+import { RecipeQuery } from "../Pages/Home";
+
+export interface TotalNutritients {
+  ENERC_KCAL: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  FAT: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  CHOCDF: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+}
+
+export interface TotalDaily {
+  ENERC_KCAL: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  FAT: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  CHOCDF: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  MG: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  K: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+  FE: {
+    label: string;
+    quantity: number;
+    unit: string;
+  };
+}
+
+export interface TestNutrition {
+  label: string;
+  total: number;
+  daily: number;
+  unit: string;
+  sub: [
+    {
+      label: string;
+      total: number;
+      daily: number;
+      unit: string;
+    }
+  ];
+}
 
 export interface Recipe {
   label: string;
@@ -8,10 +74,17 @@ export interface Recipe {
     SMALL: {
       url: string;
     };
+    REGULAR: {
+      url: string;
+    };
   };
   source: string;
   url: string;
   ingredientLines: string[];
+  healthLabels: string[];
+  totalNutrients: TotalNutritients;
+  totalDaily: TotalDaily;
+  digest: TestNutrition[];
 }
 
 interface Recipes {
