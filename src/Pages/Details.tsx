@@ -26,7 +26,7 @@ const Page = () => {
         area="main"
         display="flex"
         justifyContent="center"
-        paddingX={{ lg: 20, xl: 100 }}
+        paddingX={{ lg: 10, xl: 100 }}
         paddingY={10}
       >
         <DetailsGrid recipe={location.state.recipe} />

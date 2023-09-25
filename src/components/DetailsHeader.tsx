@@ -11,10 +11,10 @@ const DetailsHeader = ({ recipe }: Props) => {
     <HStack alignItems="flex-start">
       <Image src={recipe.images.REGULAR.url} />
       <VStack justifyContent="center">
-        <Heading padding={10} textAlign="center">
+        <Heading padding={{ lg: 5, xl: 10 }} textAlign="center">
           {recipe.label}
         </Heading>
-        <Link paddingTop={10} href={recipe.url} isExternal>
+        <Link href={recipe.url} isExternal>
           <Button
             border="1px solid #999"
             bgGradient="linear-gradient(to-b, #8fe21b 0%, #6cb30a 100%)"

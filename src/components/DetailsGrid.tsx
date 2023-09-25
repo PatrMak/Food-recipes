@@ -15,7 +15,12 @@ const DetailsGrid = ({ recipe }: Props) => {
       templateAreas={{
         lg: `"detailsHeader nutrition" "detailsIngredients nutrition"`,
       }}
-      templateColumns={{ lg: "1fr 350px" }}
+      templateColumns={{
+        lg: "58vw 350px",
+        xl: "50vw 350px",
+        "2xl": "45vw 350px",
+      }}
+      templateRows={{ lg: "300px " }}
       border="1px solid #F3F3F3"
       boxShadow="1px 2px 2px #CCC"
       rowGap={5}
