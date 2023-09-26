@@ -68,25 +68,3 @@ const DetailsHeader = ({ recipe }: Props) => {
 };
 
 export default DetailsHeader;
-
-// <HStack alignItems="flex-start">
-//   <Image src={recipe.images.REGULAR.url} />
-//   <VStack justifyContent="center">
-//     <Heading padding={{ lg: 5, xl: 10 }} textAlign="center">
-//       {recipe.label}
-//     </Heading>
-//     <Link href={recipe.url} isExternal>
-//       <Button
-//         border="1px solid #999"
-//         bgGradient="linear-gradient(to-b, #8fe21b 0%, #6cb30a 100%)"
-//         borderRadius="30px"
-//         _hover={{
-//           bgGradient: "linear-gradient(to-b, #8fe21b 100%, #6cb30a 100%)",
-//         }}
-//         color="white"
-//       >
-//         Instruction
-//       </Button>
-//     </Link>
-//   </VStack>
-// </HStack>

@@ -17,7 +17,7 @@ const DetailsGrid = ({ recipe }: Props) => {
         lg: `"detailsHeader nutrition" "detailsIngredients nutrition"`,
       }}
       templateColumns={{
-        base: "1fr",
+        base: "95vw",
         md: "80vw",
         lg: "58vw 350px",
         xl: "50vw 350px",
@@ -38,10 +38,7 @@ const DetailsGrid = ({ recipe }: Props) => {
           totalNutritients={recipe.totalNutrients}
         />
       </GridItem>
-      <GridItem
-        area="detailsIngredients"
-        bgGradient="linear(to-b, #f8f8f8 0%, #ffffff 100%)"
-      >
+      <GridItem area="detailsIngredients">
         <DetailsIngredients recipe={recipe} />
       </GridItem>
     </Grid>
