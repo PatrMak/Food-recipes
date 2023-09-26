@@ -14,9 +14,7 @@ const Page = () => {
         base: `"nav" "main"`,
         lg: `"nav" "main" "footer"`,
       }}
-      templateColumns={{
-        lg: "1fr",
-      }}
+      templateColumns="1fr"
       templateRows={{ base: "50px 1fr", lg: "50px 1fr 50px" }}
     >
       <GridItem area="nav" className={navStyles.mobileNav}>
