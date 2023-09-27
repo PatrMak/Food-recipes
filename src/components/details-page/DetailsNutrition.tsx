@@ -4,9 +4,9 @@ import {
   TestNutrition,
   TotalDaily,
   TotalNutritients,
-} from "../hooks/useRecipes";
+} from "../../hooks/useRecipes";
 import DetailsCalories from "./DetailsCalories";
-import DetailsNutrition from "./DetailsNutrition";
+import Nutrition from "./Nutrition";
 
 export interface NutritionDetails {
   totalNutritients: TotalNutritients;
@@ -14,7 +14,7 @@ export interface NutritionDetails {
   nutritions: TestNutrition[];
 }
 
-const Nutrition = ({
+const DetailsNutrition = ({
   totalNutritients,
   totalDaily,
   nutritions,
@@ -39,9 +39,9 @@ const Nutrition = ({
         calories={totalNutritients.ENERC_KCAL.quantity}
         dailyPercentage={totalDaily.ENERC_KCAL.quantity}
       />
-      <DetailsNutrition nutritions={nutritions} />
+      <Nutrition nutritions={nutritions} />
     </VStack>
   );
 };
 
-export default Nutrition;
+export default DetailsNutrition;

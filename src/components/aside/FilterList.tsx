@@ -1,4 +1,4 @@
-import useFilters from "../hooks/useFilters";
+import useFilters from "../../hooks/useFilters";
 import { Button } from "@chakra-ui/button";
 import { VStack } from "@chakra-ui/layout";
 import {

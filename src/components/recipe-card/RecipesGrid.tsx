@@ -1,9 +1,9 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
-import useRecipes from "../hooks/useRecipes";
+import useRecipes from "../../hooks/useRecipes";
 import RecipeCard from "./RecipeCard";
 import RecipeCardSkeleton from "./RecipeCardSkeleton";
 import RecipeCardContainer from "./RecipeCardContainer";
-import { RecipeQuery } from "../Pages/Home";
+import { RecipeQuery } from "../../Pages/Home";
 
 interface Props {
   selectedFilters: RecipeQuery | undefined;

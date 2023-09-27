@@ -1,32 +1,31 @@
 import { HStack, Icon, IconButton, Link, Text } from "@chakra-ui/react";
-import useMedia from "../hooks/useMedia";
+import useMyMedia from "../../hooks/useMyMedia";
 
-const MediaEdmam = () => {
-  const { data } = useMedia();
+const MyMedia = () => {
+  const { data } = useMyMedia();
   return (
-    <HStack>
+    <HStack paddingRight="50px">
       <Text
         textShadow="1px 1px 0px #FFF"
         color="#666"
         margin="0"
-        paddingLeft="50px"
         fontSize="12px"
       >
-        FOLLOW EDAMAM:
+        FOLLOW ME:
       </Text>
-      {data.map((icon) => (
-        <Link key={icon.id} href={icon.link} isExternal>
+      {data.map((item) => (
+        <Link key={item.id} href={item.link} isExternal>
           <IconButton
-            aria-label={icon.name}
+            aria-label={item.name}
             variant="outline"
             _hover={{ bg: "transparent" }}
-            key={icon.id}
+            key={item.id}
             icon={
               <Icon
                 boxSize={7}
                 color="#A7A7A7"
-                _hover={{ color: icon.color }}
-                as={icon.icon}
+                _hover={{ color: item.color }}
+                as={item.icon}
               />
             }
           ></IconButton>
@@ -36,4 +35,4 @@ const MediaEdmam = () => {
   );
 };
 
-export default MediaEdmam;
+export default MyMedia;

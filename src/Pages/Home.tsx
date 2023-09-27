@@ -7,13 +7,13 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import "bootstrap/dist/css/bootstrap.css";
-import NavBar from "../components/NavBar";
-import RecipesGrid from "../components/RecipesGrid";
-import FilterList from "../components/FilterList";
-import Footer from "../components/Footer";
+import NavBar from "../components/navigation/NavBar";
+import RecipesGrid from "../components/recipe-card/RecipesGrid";
+import FilterList from "../components/aside/FilterList";
+import Footer from "../components/footer/Footer";
 import { useEffect, useState } from "react";
-import AsideSm from "../components/AsideSm";
-import navStyles from "../components/NavBar.module.css";
+import AsideSm from "../components/aside/AsideSm";
+import navStyles from "../components/navigation/NavBar.module.css";
 
 export interface RecipeQuery {
   q: string;

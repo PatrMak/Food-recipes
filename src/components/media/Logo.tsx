@@ -1,6 +1,6 @@
 import { HStack, Image, Show } from "@chakra-ui/react";
-import logo from "../assets/logo.png";
-import smallLogo from "../assets/small-logo.png";
+import logo from "../../assets/logo.png";
+import smallLogo from "../../assets/small-logo.png";
 
 const Logo = () => {
   return (

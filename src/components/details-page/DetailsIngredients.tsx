@@ -11,7 +11,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Recipe } from "../hooks/useRecipes";
+import { Recipe } from "../../hooks/useRecipes";
 import { GoDotFill } from "react-icons/go";
 
 interface Props {

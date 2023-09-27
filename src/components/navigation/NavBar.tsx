@@ -1,7 +1,7 @@
 import { HStack } from "@chakra-ui/react";
 import SearchInputs from "./SearchInputs";
-import About from "./About";
-import Logo from "./Logo";
+import About from "../media/About";
+import Logo from "../media/Logo";
 
 interface Props {
   onSearch?: (searchTxt: string) => void;

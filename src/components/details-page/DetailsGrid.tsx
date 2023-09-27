@@ -1,9 +1,9 @@
 import { Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import DetailsHeader from "./DetailsHeader";
-import { Recipe } from "../hooks/useRecipes";
+import { Recipe } from "../../hooks/useRecipes";
 import DetailsIngredients from "./DetailsIngredients";
-import Nutrition from "./Nutrition";
+import DetailsNutrition from "./DetailsNutrition";
 
 interface Props {
   recipe: Recipe;
@@ -32,7 +32,7 @@ const DetailsGrid = ({ recipe }: Props) => {
         <DetailsHeader recipe={recipe} />
       </GridItem>
       <GridItem area="nutrition" borderLeft="1px solid #F3F3F3">
-        <Nutrition
+        <DetailsNutrition
           nutritions={recipe.digest}
           totalDaily={recipe.totalDaily}
           totalNutritients={recipe.totalNutrients}

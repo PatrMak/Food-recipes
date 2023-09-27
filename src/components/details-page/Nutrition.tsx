@@ -1,7 +1,7 @@
 import { HStack, List, ListItem, VStack, Text } from "@chakra-ui/react";
 import React from "react";
-import { NutritionDetails } from "./Nutrition";
-import { TestNutrition } from "../hooks/useRecipes";
+import { NutritionDetails } from "./DetailsNutrition";
+import { TestNutrition } from "../../hooks/useRecipes";
 import NutritionName from "./NutritionName";
 import NutritionTotal from "./NutritionTotal";
 import NutritionDaily from "./NutritionDaily";
@@ -10,7 +10,7 @@ interface Props {
   nutritions: TestNutrition[];
 }
 
-const DetailsNutrition = ({ nutritions }: Props) => {
+const Nutrition = ({ nutritions }: Props) => {
   return (
     <HStack>
       <NutritionName nutritions={nutritions} />
@@ -22,7 +22,7 @@ const DetailsNutrition = ({ nutritions }: Props) => {
   );
 };
 
-export default DetailsNutrition;
+export default Nutrition;
 
 // <List alignItems="flex-start" w="100%">
 // {testNut.map((item) =>

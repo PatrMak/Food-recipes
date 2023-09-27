@@ -73,13 +73,14 @@ const About = () => {
             <Text>
               Hi my name is Patryk. I graduated with a master's degree in
               automation and robotics. I currently work as an automation
-              engineer. One of part of my job is developing desktop applications
-              for machines. I'm using for this .Net Framework, C# and WinForms.
+              engineer. One part of my job is developing desktop applications
+              for machines. Uses the following technologies: .NET Framework, C#
+              and WinForms.
             </Text>
             <Text>
-              In my free time, I learn web technologies using React and
-              TypeScript. I encourage you to follow my social media where you
-              will find more content I create.
+              In my free time, I learn web technologies using HTML, CSS, React
+              with TypeScript, public API. I encourage you to follow my social
+              media where you will find more content I creating.
             </Text>
           </>
         }

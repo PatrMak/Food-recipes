@@ -1,6 +1,6 @@
 import { List, ListItem } from "@chakra-ui/react";
 import React from "react";
-import { TestNutrition } from "../hooks/useRecipes";
+import { TestNutrition } from "../../hooks/useRecipes";
 interface Props {
   nutritions: TestNutrition[];
 }

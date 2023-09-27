@@ -9,7 +9,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import React from "react";
-import { Recipe } from "../hooks/useRecipes";
+import { Recipe } from "../../hooks/useRecipes";
 
 export interface Props {
   recipe: Recipe;

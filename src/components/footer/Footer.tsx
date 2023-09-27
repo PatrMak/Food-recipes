@@ -1,6 +1,6 @@
 import { HStack } from "@chakra-ui/react";
-import MediaEdmam from "./MediaEdmam";
-import MyMedia from "./MyMedia";
+import MediaEdmam from "../media/MediaEdmam";
+import MyMedia from "../media/MyMedia";
 
 const Footer = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Recipe } from "../hooks/useRecipes";
+import { Recipe } from "../../hooks/useRecipes";
 import {
   Image,
   Card,

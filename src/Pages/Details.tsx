@@ -1,10 +1,10 @@
 import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import navStyles from "../components/NavBar.module.css";
-import DetailsGrid from "../components/DetailsGrid";
+import Footer from "../components/footer/Footer";
+import NavBar from "../components/navigation/NavBar";
+import navStyles from "../components/navigation/NavBar.module.css";
+import DetailsGrid from "../components/details-page/DetailsGrid";
 
 const Page = () => {
   const location = useLocation();
