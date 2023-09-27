@@ -91,6 +91,22 @@ interface Recipes {
   recipe: Recipe;
 }
 
+const randomSearch = [
+  "meal",
+  "dinner",
+  "fish",
+  "chicken",
+  "salad",
+  "egg",
+  "drink",
+  "breakfast",
+  "lunch",
+  "juice",
+  "pasta",
+  "pizza",
+  "burger",
+];
+
 const useRecipes = (selectedFilters: RecipeQuery | undefined) =>
   useData<Recipes>(
     "/v2",
@@ -103,7 +119,7 @@ const useRecipes = (selectedFilters: RecipeQuery | undefined) =>
           selectedFilters?.cuisineType === undefined &&
           selectedFilters?.mealType === undefined &&
           selectedFilters?.dishType === undefined
-            ? "meal"
+            ? randomSearch[Math.floor(Math.random() * randomSearch.length)]
             : selectedFilters.q,
         diet: selectedFilters?.diet,
         health: selectedFilters?.health,
@@ -117,8 +133,3 @@ const useRecipes = (selectedFilters: RecipeQuery | undefined) =>
   );
 
 export default useRecipes;
-
-// selectedFilters?.mealType !== undefined ||
-// selectedFilters?.q !== undefined
-//   ? selectedFilters?.mealType
-//   : "Dinner",
