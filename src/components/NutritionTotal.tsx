@@ -7,7 +7,7 @@ interface Props {
 
 const NutritionTotal = ({ nutritions }: Props) => {
   return (
-    <List textAlign="right" paddingLeft={3}>
+    <List textAlign="right" paddingLeft={1}>
       {nutritions.map((item) =>
         Object.prototype.hasOwnProperty.call(item, "sub") ? (
           <div key={item.label + "2"}>

@@ -8,7 +8,7 @@ interface Props {
 
 const NutritionName = ({ nutritions }: Props) => {
   return (
-    <List paddingLeft={5}>
+    <List paddingLeft={3}>
       {nutritions.map((item) =>
         Object.prototype.hasOwnProperty.call(item, "sub") ? (
           <div key={item.label + "1"}>

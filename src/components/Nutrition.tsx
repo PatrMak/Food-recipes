@@ -20,7 +20,13 @@ const Nutrition = ({
   nutritions,
 }: NutritionDetails) => {
   return (
-    <VStack paddingTop={5}>
+    <VStack
+      paddingTop={5}
+      bgGradient={{
+        base: "linear(to-b, #f8f8f8 0%, #ffffff 100%)",
+        lg: "none",
+      }}
+    >
       <Text
         margin="0"
         fontSize="2xl"
