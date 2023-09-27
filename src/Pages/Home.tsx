@@ -14,6 +14,7 @@ import Footer from "../components/footer/Footer";
 import { useEffect, useState } from "react";
 import AsideSm from "../components/aside/AsideSm";
 import navStyles from "../components/navigation/NavBar.module.css";
+import { useTitle } from "../hooks/useTitle";
 
 export interface RecipeQuery {
   q: string;
@@ -24,7 +25,9 @@ export interface RecipeQuery {
   dishType: string;
 }
 
-function Home() {
+const Home = () => {
+  useTitle("Food Recipes | Home");
+
   const [selectedFilter, setSelectedFilter] = useState<RecipeQuery>(
     {} as RecipeQuery
   );
@@ -123,6 +126,6 @@ function Home() {
       </Show>
     </Grid>
   );
-}
+};
 
 export default Home;

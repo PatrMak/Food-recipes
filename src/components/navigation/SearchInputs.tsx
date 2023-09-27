@@ -43,6 +43,7 @@ const SearchInputs = ({ onSearch }: Props) => {
         }}
       >
         <Input
+          id="search"
           ref={ref}
           placeholder={placeHolderTxt}
           border="1px solid #BFBFBF"

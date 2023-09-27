@@ -5,9 +5,11 @@ import Footer from "../components/footer/Footer";
 import NavBar from "../components/navigation/NavBar";
 import navStyles from "../components/navigation/NavBar.module.css";
 import DetailsGrid from "../components/details-page/DetailsGrid";
+import { useTitle } from "../hooks/useTitle";
 
 const Page = () => {
   const location = useLocation();
+  useTitle("Food Recipes | " + location.state.recipe.label);
   return (
     <Grid
       templateAreas={{
