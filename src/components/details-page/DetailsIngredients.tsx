@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Recipe } from "../../hooks/useRecipes";
 import { GoDotFill } from "react-icons/go";
+import { divider, txt } from "../../data/propertyStyles";
 
 interface Props {
   recipe: Recipe;
@@ -33,13 +34,13 @@ const DetailsIngredients = ({ recipe }: Props) => {
         <VStack gap={0}>
           <Text
             margin="0"
-            fontSize="2xl"
-            color="#666"
-            textShadow='1px 1px 0px #FFF"'
+            fontSize={txt.fontLarge}
+            color={txt.color}
+            textShadow={txt.shadow}
           >
             {recipe.ingredientLines.length + " Ingredients"}
           </Text>
-          <Divider borderColor="#D9D9D9" w="90%" />
+          <Divider borderColor={divider.borderColor} w="90%" />
           <List>
             {recipe.ingredientLines.map((ingredient) => (
               <ListItem paddingY={2} key={ingredient}>
@@ -56,13 +57,13 @@ const DetailsIngredients = ({ recipe }: Props) => {
         <VStack gap={0}>
           <Text
             margin="0"
-            fontSize="2xl"
-            color="#666"
-            textShadow='1px 1px 0px #FFF"'
+            fontSize={txt.fontLarge}
+            color={txt.color}
+            textShadow={txt.shadow}
           >
             Diet
           </Text>
-          <Divider borderColor="#D9D9D9" w="90%" />
+          <Divider borderColor={divider.borderColor} w="90%" />
           <List>
             {recipe.healthLabels.map((health) => (
               <ListItem paddingY={2} key={health}>

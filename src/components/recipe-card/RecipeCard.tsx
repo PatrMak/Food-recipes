@@ -16,15 +16,13 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Link as ReactRouterLink } from "react-router-dom";
+import { divider, txt } from "../../data/propertyStyles";
 interface Props {
   recipe: Recipe;
 }
 
 const RecipeCard = ({ recipe }: Props) => {
-  const dividerColor: string = "#D9D9D9";
-  const textShadow: string = "1px 1px 0px #FFF";
   const caloriesAndIngredientsColor: string = "#7C0";
-  const caloriesAndIngredientsTxtColor: string = "#666";
   const caloriesAndIngredientsFont: string = "lg";
   const caloriesAndIngredientsTxtFont: string = "md";
   const caloriesRounded: number = Math.round(recipe.calories);
@@ -51,11 +49,11 @@ const RecipeCard = ({ recipe }: Props) => {
             {recipe.label}
           </Heading>
           <Box position="absolute" bottom="50px">
-            <Divider margin="0" borderColor={dividerColor}></Divider>
+            <Divider margin="0" borderColor={divider.borderColor}></Divider>
             <HStack padding="5px" justifyContent="center" alignSelf="end">
               <>
                 <Text
-                  textShadow={textShadow}
+                  textShadow={txt.shadow}
                   color={caloriesAndIngredientsColor}
                   paddingBottom="1px"
                   margin="0"
@@ -64,8 +62,8 @@ const RecipeCard = ({ recipe }: Props) => {
                   {caloriesRounded}
                 </Text>
                 <Text
-                  textShadow={textShadow}
-                  color={caloriesAndIngredientsTxtColor}
+                  textShadow={txt.shadow}
+                  color={txt.color}
                   paddingBottom="1px"
                   margin="0"
                   fontSize={caloriesAndIngredientsTxtFont}
@@ -77,11 +75,11 @@ const RecipeCard = ({ recipe }: Props) => {
                 margin="2.5px"
                 height="25px"
                 orientation="vertical"
-                borderColor={dividerColor}
+                borderColor={divider.borderColor}
               />
               <>
                 <Text
-                  textShadow={textShadow}
+                  textShadow={txt.shadow}
                   color={caloriesAndIngredientsColor}
                   paddingBottom="1px"
                   margin="0"
@@ -90,8 +88,8 @@ const RecipeCard = ({ recipe }: Props) => {
                   {recipe.ingredientLines.length}
                 </Text>
                 <Text
-                  textShadow={textShadow}
-                  color={caloriesAndIngredientsTxtColor}
+                  textShadow={txt.shadow}
+                  color={txt.color}
                   paddingBottom="1px"
                   margin="0"
                   fontSize={caloriesAndIngredientsTxtFont}
@@ -100,7 +98,7 @@ const RecipeCard = ({ recipe }: Props) => {
                 </Text>
               </>
             </HStack>
-            <Divider margin="0" borderColor={dividerColor}></Divider>
+            <Divider margin="0" borderColor={divider.borderColor}></Divider>
           </Box>
         </Link>
       </CardBody>
@@ -110,7 +108,7 @@ const RecipeCard = ({ recipe }: Props) => {
           fontWeight="bold"
           fontSize={caloriesAndIngredientsFont}
           color="#999"
-          textShadow={textShadow}
+          textShadow={txt.shadow}
           href={recipe.url}
         >
           {recipe.source}

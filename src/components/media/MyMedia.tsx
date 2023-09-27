@@ -1,15 +1,16 @@
 import { HStack, Icon, IconButton, Link, Text } from "@chakra-ui/react";
 import useMyMedia from "../../hooks/useMyMedia";
+import { txt } from "../../data/propertyStyles";
 
 const MyMedia = () => {
   const { data } = useMyMedia();
   return (
     <HStack paddingRight="50px">
       <Text
-        textShadow="1px 1px 0px #FFF"
-        color="#666"
+        textShadow={txt.shadow}
+        color={txt.color}
         margin="0"
-        fontSize="12px"
+        fontSize={txt.fontSmall}
       >
         FOLLOW ME:
       </Text>

@@ -7,6 +7,7 @@ import {
 } from "../../hooks/useRecipes";
 import DetailsCalories from "./DetailsCalories";
 import Nutrition from "./Nutrition";
+import { txt } from "../../data/propertyStyles";
 
 export interface NutritionDetails {
   totalNutritients: TotalNutritients;
@@ -29,9 +30,9 @@ const DetailsNutrition = ({
     >
       <Text
         margin="0"
-        fontSize="2xl"
-        color="#666"
-        textShadow='1px 1px 0px #FFF"'
+        fontSize={txt.fontLarge}
+        color={txt.color}
+        textShadow={txt.shadow}
       >
         Nutrition
       </Text>

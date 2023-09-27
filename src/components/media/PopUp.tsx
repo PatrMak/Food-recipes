@@ -8,6 +8,7 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 import React from "react";
+import { btn } from "../../data/propertyStyles";
 
 interface Props {
   isOpen: boolean;
@@ -35,12 +36,12 @@ const PopUp = ({ isOpen, onClose, header, body }: Props) => {
 
         <ModalFooter justifyContent="center">
           <Button
-            bgGradient="linear-gradient(to-b, #8fe21b 0%, #6cb30a 100%)"
-            border="1px solid #999"
+            bgGradient={btn.bgGradient}
+            border={btn.border}
             mr={3}
             onClick={onClose}
             _hover={{
-              bgGradient: "linear-gradient(to-b, #8fe21b 100%, #6cb30a 100%)",
+              bgGradient: btn.hoverBgGradient,
             }}
             color="white"
           >

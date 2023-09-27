@@ -1,4 +1,5 @@
 import { Divider, HStack, VStack, Text } from "@chakra-ui/react";
+import { divider, txt } from "../../data/propertyStyles";
 
 interface Props {
   calories: number;
@@ -9,14 +10,14 @@ interface Props {
 const DetailsCalories = ({ calories, dailyPercentage }: Props) => {
   return (
     <VStack w="100%">
-      <Divider margin={0} w="90%" borderColor="#D9D9D9" />
+      <Divider margin={0} w="90%" borderColor={divider.borderColor} />
       <HStack gap={20}>
         <VStack>
           <Text
             margin="0"
-            fontSize="2xl"
-            color="#666"
-            textShadow='1px 1px 0px #FFF"'
+            fontSize={txt.fontLarge}
+            color={txt.color}
+            textShadow={txt.shadow}
           >
             {Math.round(calories)}
           </Text>
@@ -25,16 +26,16 @@ const DetailsCalories = ({ calories, dailyPercentage }: Props) => {
         <VStack>
           <Text
             margin="0"
-            fontSize="2xl"
-            color="#666"
-            textShadow='1px 1px 0px #FFF"'
+            fontSize={txt.fontLarge}
+            color={txt.color}
+            textShadow={txt.shadow}
           >
             {Math.round(dailyPercentage) + "%"}
           </Text>
           <Text margin="0">Daily Value</Text>
         </VStack>
       </HStack>
-      <Divider margin={0} w="90%" borderColor="#D9D9D9" />
+      <Divider margin={0} w="90%" borderColor={divider.borderColor} />
     </VStack>
   );
 };

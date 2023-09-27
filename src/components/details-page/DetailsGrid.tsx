@@ -26,7 +26,6 @@ const DetailsGrid = ({ recipe }: Props) => {
       templateRows={{ lg: "300px " }}
       border="1px solid #F3F3F3"
       boxShadow="1px 2px 2px #CCC"
-      // rowGap={5}
     >
       <GridItem area="detailsHeader">
         <DetailsHeader recipe={recipe} />

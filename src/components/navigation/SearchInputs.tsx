@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
+import { btn } from "../../data/propertyStyles";
 
 interface Props {
   onSearch?: (searchTxt: string) => void;
@@ -54,12 +55,12 @@ const SearchInputs = ({ onSearch }: Props) => {
         <InputRightElement>
           <Box width="200px">
             <Button
-              border="1px solid #999"
-              bgGradient="linear-gradient(to-b, #8fe21b 0%, #6cb30a 100%)"
+              border={btn.border}
+              bgGradient={btn.bgGradient}
               borderLeftRadius="0px"
               borderRightRadius="30px"
               _hover={{
-                bgGradient: "linear-gradient(to-b, #8fe21b 100%, #6cb30a 100%)",
+                bgGradient: btn.hoverBgGradient,
               }}
               children={<FaSearch size={20} color="white"></FaSearch>}
               onClick={() => {
