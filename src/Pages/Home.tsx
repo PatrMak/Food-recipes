@@ -97,7 +97,8 @@ const Home = () => {
         <GridItem
           h="100vh"
           area="aside-sm"
-          bgGradient="linear(to-r, #f7f7f7 0%, #e3e3e3 100%)"
+          borderTop="1px solid #FFF"
+          bgGradient="linear(to-r, #e3e3e3 0%, #e0e0e0 15%)"
           alignContent="center"
           display="flex"
           flexWrap="wrap"

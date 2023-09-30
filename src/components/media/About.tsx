@@ -59,7 +59,7 @@ const About = () => {
             </Text>
             <Text>
               Front-end is based of Edamam website which is also where the API
-              comes from, a link to the original is placed on the website.
+              comes from, a link to the original is placed down of the website.
             </Text>
           </>
         }
